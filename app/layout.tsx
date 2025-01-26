@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
-import Navbar from "@/components/navigation/navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,7 +41,6 @@ export default function RootLayout({
           disableTransitionOnChange
           enableSystem
         >
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>
