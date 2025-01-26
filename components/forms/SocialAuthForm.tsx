@@ -11,7 +11,7 @@ const SocialAuthForm = () => {
   const SoicalButtonClassName =
     "background-dark400_light900 body-medium text-dark200_light800 min-h-12 flex-1 rounded-2 px-4 py-3.5";
 
-  const handleSignIn = async (provider: "github") => {
+  const handleSignIn = async (provider: "github" | "google") => {
     try {
       await signIn(provider, {
         callbackUrl: ROUTES.HOME,
@@ -45,7 +45,10 @@ const SocialAuthForm = () => {
         />
         <span>Log in with Github</span>
       </Button>
-      <Button className={SoicalButtonClassName}>
+      <Button
+        className={SoicalButtonClassName}
+        onClick={() => handleSignIn("google")}
+      >
         <Image
           src={"icons/google.svg"}
           width={20}
